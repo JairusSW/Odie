@@ -1,0 +1,5 @@
+*.log
+*.lock
+*.webm
+*.sqlite
+/node_modules
