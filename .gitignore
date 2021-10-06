@@ -2,6 +2,7 @@
 *.lock
 *.webm
 *.sqlite
-*.json
+*.env
+.env
 config.json
 /node_modules
