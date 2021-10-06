@@ -2,7 +2,6 @@ const fs = require('fs')
 const Discord = require('discord.js')
 const { Intents } = require('discord.js')
 const voice = require('@discordjs/voice')
-require('dotenv').config()
 const { bot1, bot2, bot3, bot4, bot5, prefix } = JSON.parse(process.env.secrets)
 const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.DIRECT_MESSAGES], partials: ['CHANNEL', 'MESSAGE'] })
 client.commands = new Map()
@@ -32,5 +31,23 @@ client.on('messageCreate', async (message) => {
 client.once('ready', () => {
     console.log('Ready!')
 })
+
+const http = require('http')
+
+const server = http.createServer((req, res) => {
+
+	res.writeHead(200)
+
+	res.end('ok')
+
+})
+
+server.on('error', () => {
+
+	return
+
+})
+
+server.listen(3000)
 
 client.login(bot1.token)
